@@ -7,5 +7,15 @@
   </head>
   <body>
     <h1>Available Tours</h1>
+    <ul>
+      {% for tour in asian_tours %}
+      <li>
+        <!-- {{tour}} -->
+        <h2>{{ tour.origin_country }} to {{ tour.destination_country }}</h2>
+        <p>{{ tour.number_of_nights }} days</p>
+        <p>{{ tour.price }} USD</p>
+      </li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
