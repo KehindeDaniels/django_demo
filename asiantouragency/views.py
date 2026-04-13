@@ -1,7 +1,10 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Tour
 
 def index(request):
-    return HttpResponse("Welcome to the Asian Tour Agency!")
+    asian_tours = Tour.objects.all()
+    return render(request, 'tours/index.html', {'asian_tours': asian_tours})
 
 def about(request):
-    return HttpResponse("We are a tour agency specializing in tours across Asia.")
+    return render(request, 'tours/about.html')
