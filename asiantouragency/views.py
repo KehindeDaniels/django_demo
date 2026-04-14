@@ -6,4 +6,5 @@ def index(request):
     return render(request, 'tours/index.html', {'asian_tours': asian_tours})
 
 def about(request):
+    print("About page accessed")
     return render(request, 'tours/about.html')
