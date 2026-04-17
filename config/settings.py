@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'asiantouragency.apps.AsiantouragencyConfig',
+    'post.apps.PostConfig',
 ]
 
 MIDDLEWARE = [
