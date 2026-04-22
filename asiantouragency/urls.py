@@ -3,6 +3,7 @@ from . import views
 
 # define a list of url patterns for the asiantouragency app
 urlpatterns = [
-    path('', views.index, name='tours/index'),
+    path('', views.tours, name='tours'),
     path('about/', views.about, name='tours/about'),
+    
 ]
