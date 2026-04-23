@@ -1,26 +1,48 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-Post
+Posts
 {% endblock %} 
 
+{% comment %} add the css file {% endcomment %}
+
 {% block content %}
-
-{% for post in posts %}
-
-<article>
-
-    <h2>
-        <a href="{% url 'page' slug=post.slug %}">
-        {{ post.title }}
-        </a>
-    </h2>
-    <p>{{post.date}}</p>
-    <p>{{ post.body }}</p>
+<div class="posts-container">
+    <h1 class="posts-header">Latest Posts</h1>
     
-</article>
-
-{% endfor %}
-
-{% endblock  %}
+    {% if posts %}
+        <div class="posts-list">
+            {% for post in posts %}
+                <article class="post-card">
+                    <div class="post-header">
+                        <h2 class="post-title">
+                            <a href="{% url 'post:page' slug=post.slug %}">
+                                {{ post.title }}
+                            </a>
+                        </h2>
+                    </div>
+                    
+                    <div class="post-meta">
+                        <span class="post-date">📅 {{ post.date|date:"M d, Y" }}</span>
+                        <span class="post-time">⏱️ {% widthratio post.body|length 200 1 %} min read</span>
+                        <span class="post-words">📝 {{ post.body|length }} characters</span>
+                    </div>
+                    
+                    <div class="post-excerpt">
+                        {{ post.body|truncatewords:50 }}
+                    </div>
+                    
+                    <div class="post-footer">
+                        <a href="{% url 'post:page' slug=post.slug %}" class="read-more-btn">Read Full Post →</a>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="no-posts">
+            <p>No posts available yet. Check back soon!</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
 

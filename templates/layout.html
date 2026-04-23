@@ -5,12 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   </head>
 
   <body>
     <nav>
       <ul>
-        <li><a href="{% url 'post' %}">Posts</a></li>
+        <li><a href="{% url 'post:list' %}">Posts</a></li>
         <li><a href="{% url 'tours' %}">Tours</a></li>
       </ul>
     </nav>
