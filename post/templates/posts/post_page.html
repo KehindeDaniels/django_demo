@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block content %}
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">{{ post.title }}</h1>
+            <p class="post-meta">
+                <span class="post-date">📅 {{ post.date|date:"M d, Y" }}</span>
+                <span class="post-time">⏱️ {% widthratio post.body|length 200 1 %} min read</span>
+                <span class="post-words">📝 {{ post.body|length }} characters</span>
+            </p>
+        </header>
+
+        <div class="post-content">
+            {{ post.body|linebreaks }}
+        </div>
+    </article>
+{% endblock %}
