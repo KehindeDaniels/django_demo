@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'asiantouragency.apps.AsiantouragencyConfig',
     'post.apps.PostConfig',
+    'user.apps.UserConfig'
 ]
 
 MIDDLEWARE = [
