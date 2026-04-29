@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks</title>
+</head>
+    <body>
+        <h1>Thank You, {{ data.name }}!</h1> <!-- Accesses the 'name' field -->
+        
+        <p>We sent a confirmation to: {{ data.email }}</p> <!-- Accesses 'email' -->
+        
+        <p>Your message was: {{ data.message }}</p> <!-- Accesses 'message' -->
+
+        <a href="{% url 'home' %}">Go Home</a>
+    </body>
+</html>
