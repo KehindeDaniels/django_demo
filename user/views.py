@@ -1,11 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
 def register_user(request):
-    return render(request, 'register.html')
+    form = UserCreationForm()
+    return render(request, 'register.html', {"form": form})
     
-class RegisterUser(TemplateView):
-    template_name= "register.html"
+ 
